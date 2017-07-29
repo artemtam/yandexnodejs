@@ -1,0 +1,48 @@
+body, html {
+    margin: 0;
+}
+
+#myForm {
+    width: 30%;
+    margin: auto;
+}
+
+#myForm input {
+    display: block;
+    width: calc(100% - 2 * 7px);
+    font-size: 14px;
+    margin: 15px 0;
+    padding: 7px;
+    outline: none;
+    border: 1px solid darkgray;
+}
+
+#myForm input.error {
+    border: 1px solid red;
+}
+
+#myForm button {
+    padding: 5px 10px;
+}
+
+#resultContainer {
+    font-size: 16px;
+    width: calc(30% - 2 * 10px);
+    margin: 20px auto;
+    padding: 10px;
+}
+
+#resultContainer.success {
+    color: green;
+    border: 1px solid green;
+}
+
+#resultContainer.error {
+    color: red;
+    border: 1px solid red;
+}
+
+#resultContainer.progress {
+    color: blue;
+    border: 1px solid blue;
+}

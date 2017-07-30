@@ -69,18 +69,20 @@ const MyForm = {
                 credentials: 'include'
             };
 
+            const resultContainer = document.getElementById('resultContainer');
+
             (function sendRequest() {
                 fetch(new Request(myform.action, options)).then((response) => {
                     return response.json();
                 }).then((response) => {
-                    const resultContainer = document.getElementById('resultContainer');
                     resultContainer.className = response.status;
                     if (response.status === 'success') {
                         resultContainer.innerHTML = 'Success';
                         clearTimeout(requestTimeout);
-                    } else if (response.status === 'error')
+                    } else if (response.status === 'error') {
                         resultContainer.innerHTML = response.reason;
-                    else if (response.status === 'progress') {
+                        clearTimeout(requestTimeout);
+                    } else if (response.status === 'progress') {
                         requestTimeout = setTimeout(sendRequest, response.timeout);
                         resultContainer.innerHTML = 'Progress';
                     }

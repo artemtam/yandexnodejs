@@ -23,8 +23,7 @@ const MyForm = {
             for (let i = 0; i < formData.phone.length; i++)
                 if (/[0-9]/.test(formData.phone[i]))
                     sum += parseInt(formData.phone[i]);
-            console.log(sum);
-            if (sum >= 30) {
+            if (sum > 30) {
                 isValid = false;
                 errorFields.push('phone');
             }
